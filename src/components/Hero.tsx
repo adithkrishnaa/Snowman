@@ -3,7 +3,7 @@
 import useLanguage from "@/lib/language-context";
 import { Button } from "@/components/ui/button";
 import { Download, Mail, ArrowDown } from "lucide-react";
-import heroImage from "@/assets/product6.png";
+import heroImage from "@/Assets/product6.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
