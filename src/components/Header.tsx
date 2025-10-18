@@ -5,7 +5,7 @@ import {
   motion,
   AnimatePresence,
 } from "framer-motion";
-import snowmanLogo from "@/Assets/logo3.png";
+import snowmanLogo from "@/Assets/logog.png";
 import Image from "next/image";
 import useLanguage from "@/lib/language-context";
 
@@ -45,8 +45,8 @@ export const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? "bg-white/20 backdrop-blur-md shadow-lg border-b border-primary/50 mt-2 mx-40 rounded-full"
-          : "bg-transparent px-20 mt-1"
+          ? "bg-white/20 backdrop-blur-md shadow-lg border-b border-primary/50 mt-2 mx-4 lg:mx-40 rounded-full"
+          : "bg-transparent px-2 lg:px-20 mt-1"
       }`}>
       <div className="container mx-auto px-2 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 lg:h-16">

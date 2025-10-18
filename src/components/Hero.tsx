@@ -3,7 +3,7 @@
 import useLanguage from "@/lib/language-context";
 import { Button } from "@/components/ui/button";
 import { Download, Mail, ArrowDown } from "lucide-react";
-import heroImage from "@/Assets/product6.png";
+import heroImage from "@/Assets/product3.jpg";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
@@ -76,7 +76,7 @@ export const Hero = () => {
     <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-primary/10 via-accent/5 to-secondary/10">
       <div className="container relative z-10 px-4 py-20">
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center px-10"
+          className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center px-2 lg:px-10"
           variants={containerVariants}
           initial="hidden"
           animate="visible"

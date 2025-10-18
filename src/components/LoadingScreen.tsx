@@ -2,7 +2,7 @@
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-import snowmanLogo from "@/Assets/logo3.png";
+import snowmanLogo from "@/Assets/logog.png";
 import Image from "next/image";
 import { useLoading } from "@/lib/loading-context";
 
