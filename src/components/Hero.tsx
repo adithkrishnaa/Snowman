@@ -3,12 +3,14 @@
 import useLanguage from "@/lib/language-context";
 import { Button } from "@/components/ui/button";
 import { Download, Mail, ArrowDown } from "lucide-react";
-import heroImage from "@/Assets/product3.jpg";
+import heroImage from "@/Assets/hero4.png";
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { useScrollAnimation } from "@/lib/useScrollAnimation";
 
 export const Hero = () => {
   const { t } = useLanguage();
+  const { ref: imageRef, inView: imageInView } = useScrollAnimation(0.3);
 
   const handleDownloadCatalog = () => {
     window.open('/catalog.pdf', '_blank');
@@ -72,52 +74,83 @@ export const Hero = () => {
     },
   };
 
+  const mobileImageVariants = {
+    hidden: { y: 50, opacity: 0, scale: 0.9 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      scale: 1,
+      transition: {
+        duration: 0.8,
+        ease: "easeOut" as const,
+      },
+    },
+  };
+
   return (
     <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-primary/10 via-accent/5 to-secondary/10">
       <div className="container relative z-10 px-4 py-20">
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center px-2 lg:px-10"
+          className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-12 items-center px-2 lg:px-10"
           variants={containerVariants}
           initial="hidden"
-          animate="visible"
-        >
+          animate="visible">
           {/* Left: Text */}
-          <div className="space-y-8 text-left ">
-            <motion.h1 
-              className="text-5xl md:text-6xl font-display font-bold leading-tight text-foreground"
-              variants={titleVariants}
-            >
+          <div className="md:space-y-8 text-left ">
+            <motion.h1
+              className="text-3xl md:text-6xl font-display font-bold leading-tight text-foreground"
+              variants={titleVariants}>
               <span className="text-primary">{t("hero.title")}</span>
             </motion.h1>
-            <motion.p 
-              className="text-lg md:text-2xl text-muted-foreground font-light max-w-xl leading-relaxed"
-              variants={itemVariants}
-            >
+
+            {/* Mobile Image - Only visible on mobile */}
+            <motion.div
+              ref={imageRef}
+              className="md:hidden w-full h-40 relative"
+              variants={mobileImageVariants}
+              initial="hidden"
+              animate={imageInView ? "visible" : "hidden"}>
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-primary/20 via-secondary/10 to-accent/10 blur-2xl" />
+              <div className="relative w-full h-full">
+                <Image
+                  src={heroImage}
+                  alt="Snowman Premium Product"
+                  fill
+                  className="object-contain drop-shadow-2xl"
+                  priority
+                />
+              </div>
+            </motion.div>
+
+            <motion.p
+              className="text-lg  md:text-2xl text-muted-foreground font-light max-w-xl leading-relaxed"
+              variants={itemVariants}>
               {t("hero.subtitle")}
             </motion.p>
 
-            <motion.div 
+            <motion.div
               className="flex flex-col sm:flex-row gap-6 items-start"
-              variants={itemVariants}
-            >
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              variants={itemVariants}>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}>
                 <Button
                   size="lg"
                   onClick={handleDownloadCatalog}
-                  className="text-lg px-10 py-6 bg-primary hover:bg-primary-dark text-white shadow-lg hover:shadow-xl transition-all duration-300 rounded-full border-0"
-                >
+                  className="text-lg px-5 md:px-10 py-4 md:py-6 bg-primary hover:bg-primary-dark text-white shadow-lg hover:shadow-xl transition-all duration-300 rounded-full border-0">
                   <Download className="mr-3 h-6 w-6" />
                   {t("hero.cta")}
                 </Button>
               </motion.div>
 
-              <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <motion.div
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}>
                 <Button
                   size="lg"
                   variant="outline"
                   onClick={scrollToContact}
-                  className="text-lg px-10 py-6 border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 rounded-full"
-                >
+                  className="text-lg px-5 md:px-10 py-4 md:py-6 border-2 border-primary text-primary hover:bg-primary hover:text-white transition-all duration-300 rounded-full">
                   <Mail className="mr-3 h-6 w-6" />
                   {t("hero.contact")}
                 </Button>
@@ -125,33 +158,35 @@ export const Hero = () => {
             </motion.div>
 
             {/* Quick stats */}
-            <motion.div 
+            <motion.div
               className="grid grid-cols-3 gap-6 pt-6"
-              variants={itemVariants}
-            >
+              variants={itemVariants}>
               <div className="text-left">
                 <div className="text-3xl font-bold text-primary">500+</div>
                 <div className="text-sm text-muted-foreground">Products</div>
               </div>
               <div className="text-left">
                 <div className="text-3xl font-bold text-secondary">1+</div>
-                <div className="text-sm text-muted-foreground">Years Experience</div>
+                <div className="text-sm text-muted-foreground">
+                  Years Experience
+                </div>
               </div>
               <div className="text-left">
-                <div className="text-3xl font-bold text-primary-light">24/7</div>
+                <div className="text-3xl font-bold text-primary-light">
+                  24/7
+                </div>
                 <div className="text-sm text-muted-foreground">Support</div>
               </div>
             </motion.div>
           </div>
 
           {/* Right: Product image */}
-          <motion.div 
-            className="relative w-full h-[360px] md:h-[520px]"
+          <motion.div
+            className="hidden md:block relative w-full h-[360px] md:h-[520px]"
             variants={itemVariants}
             initial={{ opacity: 0, x: 60 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
+            transition={{ duration: 0.8, ease: "easeOut" }}>
             <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-primary/20 via-secondary/10 to-accent/10 blur-3xl" />
             <div className="absolute inset-0 rounded-3xl" />
             <div className="relative w-full h-full">
@@ -168,17 +203,15 @@ export const Hero = () => {
       </div>
 
       {/* Scroll indicator */}
-      <motion.div 
+      <motion.div
         className="absolute bottom-8 left-1/2 -translate-x-1/2 cursor-pointer"
         onClick={scrollToNext}
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-        whileHover={{ scale: 1.1 }}
-      >
-        <motion.div 
+        whileHover={{ scale: 1.1 }}>
+        <motion.div
           className="w-8 h-12 border-2 border-primary rounded-full flex items-start justify-center p-2 hover:border-primary-light transition-colors"
-          whileHover={{ borderColor: "#77E17B" }}
-        >
+          whileHover={{ borderColor: "#77E17B" }}>
           <ArrowDown className="w-4 h-4 text-primary" />
         </motion.div>
       </motion.div>

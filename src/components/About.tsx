@@ -37,7 +37,7 @@ export default function About() {
               viewport={{ once: true }}
             />
             <motion.p
-              className="text-xl md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed"
+              className=" md:text-2xl text-muted-foreground max-w-4xl mx-auto leading-relaxed"
               initial={{ y: 30, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.3 }}

@@ -17,7 +17,7 @@ import Product2 from "../Assets/product14.png";
 import Product3 from "../Assets/product5.jpg";
 import Product4 from "../Assets/product15.png";
 import Product5 from "../Assets/product8.png";
-import Product6 from "../Assets/product11.jpg";
+import Product6 from "../Assets/product11.png";
 
 const products = [
   {
@@ -272,7 +272,7 @@ export default function Product() {
 
                   {/* Floating Package Icon - Bottom Left */}
                   <motion.div 
-                    className="absolute bottom-6 left-6 w-12 h-12 bg-white/10 backdrop-blur-xl rounded-xl flex items-center justify-center border border-white/20 shadow-xl"
+                    className="absolute bottom-6 left-6 w-12 h-12 bg-green-400/50 backdrop-blur-xl rounded-xl flex items-center justify-center border border-white/20 shadow-xl"
                     whileHover={{ 
                       y: -4,
                       scale: 1.1,
@@ -299,7 +299,7 @@ export default function Product() {
 
                   {/* CTA Button */}
                   <motion.button 
-                    className="w-full bg-slate-900 hover:bg-slate-800 text-white py-4 rounded-2xl font-medium transition-all duration-300 flex items-center justify-center gap-2 group/btn shadow-lg hover:shadow-xl"
+                    className="w-full bg-green-700 hover:bg-green-600 text-white py-4 rounded-2xl font-medium transition-all duration-300 flex items-center justify-center gap-2 group/btn shadow-lg hover:shadow-xl"
                     whileHover={{ 
                       scale: 1.02,
                       boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
@@ -363,20 +363,20 @@ export default function Product() {
                 transition={{ duration: 0.2 }}
               >
                 <Download className="w-4 h-4 text-blue-400" />
-                <span className="text-sm font-medium text-white">
+                <span className="text-xs md:text-sm font-medium text-white">
                   Full Catalog Available
                 </span>
               </motion.div>
 
               <motion.h3 
-                className="text-4xl md:text-5xl font-bold text-white mb-4"
+                className="text-2xl md:text-5xl font-bold text-white mb-4"
                 variants={itemVariants}
               >
                 Explore Our Complete Range
               </motion.h3>
 
               <motion.p 
-                className="text-xl text-slate-300 max-w-2xl mx-auto"
+                className="text-base md:text-xl text-slate-300 max-w-2xl mx-auto"
                 variants={itemVariants}
               >
                 Download our comprehensive catalog to discover all our premium
@@ -384,7 +384,7 @@ export default function Product() {
               </motion.p>
 
               <motion.button 
-                className="inline-flex items-center gap-3 bg-white hover:bg-blue-50 text-slate-900 px-10 py-5 rounded-2xl font-semibold text-lg transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 group"
+                className="inline-flex items-center gap-3 bg-white hover:bg-blue-50 text-slate-900 px-10 py-5 rounded-2xl font-semibold text-xs md:text-lg transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 group"
                 variants={itemVariants}
                 whileHover={{ 
                   scale: 1.05,
@@ -399,7 +399,7 @@ export default function Product() {
                 >
                   <Download className="w-6 h-6" />
                 </motion.div>
-                <span>Download Catalog</span>
+                <span className=" whitespace-nowrap">Download Catalog</span>
               </motion.button>
 
               {/* Trust Indicators */}
