@@ -106,7 +106,7 @@ export const Hero = () => {
             {/* Mobile Image - Only visible on mobile */}
             <motion.div
               ref={imageRef}
-              className="md:hidden w-full h-40 relative"
+              className="md:hidden w-full h-56 relative"
               variants={mobileImageVariants}
               initial="hidden"
               animate={imageInView ? "visible" : "hidden"}>
