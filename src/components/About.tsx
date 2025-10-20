@@ -9,9 +9,9 @@ export default function About() {
   return (
     <section
       id="about"
-      className="py-24 bg-gradient-to-br from-accent/20 via-background to-primary/5 relative overflow-hidden">
+      className="py-10 md:py-24 bg-gradient-to-br from-accent/20 via-background to-primary/5 relative overflow-hidden">
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="hidden md:absolute inset-0 opacity-5">
         <div className="absolute top-20 left-20 w-32 h-32 bg-primary rounded-full blur-3xl"></div>
         <div className="absolute bottom-20 right-20 w-40 h-40 bg-secondary rounded-full blur-3xl"></div>
         <div className="absolute top-1/2 left-1/2 w-24 h-24 bg-primary-light rounded-full blur-2xl"></div>
@@ -47,7 +47,7 @@ export default function About() {
           </AnimatedSection>
 
           {/* Main Content Grid */}
-          <div className="grid lg:grid-cols-2 gap-16 items-center mb-20 ">
+          <div className="hidden md:grid lg:grid-cols-2 gap-16 items-center mb-20 ">
             {/* Left Side - Features */}
             <StaggeredChildren className="space-y-4 " staggerDelay={0.2}>
               <motion.div
@@ -175,7 +175,7 @@ export default function About() {
           </div>
 
           {/* Values Section */}
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="hidden md:grid md:grid-cols-3 gap-8">
             <div className="text-center space-y-4">
               <div className="bg-primary/10 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto">
                 <CheckCircle className="h-8 w-8 text-primary" />

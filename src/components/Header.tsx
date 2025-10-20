@@ -5,7 +5,7 @@ import {
   motion,
   AnimatePresence,
 } from "framer-motion";
-import snowmanLogo from "@/Assets/logog.png";
+import snowmanLogo from "@/Assets/logogw.png";
 import Image from "next/image";
 import useLanguage from "@/lib/language-context";
 
