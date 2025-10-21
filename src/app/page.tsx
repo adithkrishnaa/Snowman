@@ -23,10 +23,13 @@ export default function Home() {
         <PageTransition>
           <ScrollProgress />
           <Header />
-          <Hero />
-          <About />
-          <Product />
-          <Contact />
+          <main role="main">
+            <h1 className="sr-only">Snowman Split AC & Inverter Air Conditioning Systems - Turkey&apos;s Leading AC Manufacturer</h1>
+            <Hero />
+            <About />
+            <Product />
+            <Contact />
+          </main>
           <Footer />
           <WhatsAppButton />
         </PageTransition>

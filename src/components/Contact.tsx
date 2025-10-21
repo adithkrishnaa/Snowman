@@ -75,7 +75,7 @@ export const Contact = () => {
   };
 
   return (
-    <section id="contact" className="py-24 bg-gradient-to-br from-secondary/10 via-background to-primary/10 relative overflow-hidden">
+    <section id="contact" className="py-24 bg-gradient-to-br from-secondary/10 via-background to-primary/10 relative overflow-hidden" aria-labelledby="contact-heading">
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 right-20 w-40 h-40 bg-primary rounded-full blur-3xl"></div>
@@ -87,6 +87,7 @@ export const Contact = () => {
           {/* Header */}
           <AnimatedSection className="text-center mb-20" delay={0.2}>
             <motion.h2 
+              id="contact-heading"
               className="text-5xl md:text-6xl font-display font-bold text-foreground mb-8"
               initial={{ scale: 0.8, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}

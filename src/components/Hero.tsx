@@ -88,7 +88,7 @@ export const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-primary/10 via-accent/5 to-secondary/10">
+    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-primary/10 via-accent/5 to-secondary/10" aria-label="Hero Section">
       <div className="container relative z-10 px-4 py-20">
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-12 items-center px-2 lg:px-10"
@@ -97,11 +97,11 @@ export const Hero = () => {
           animate="visible">
           {/* Left: Text */}
           <div className="md:space-y-8 text-left ">
-            <motion.h1
-              className="text-3xl md:text-6xl font-display font-bold leading-tight text-foreground"
+            <motion.h2
+              className="text-3xl md:text-5xl font-display font-bold leading-tight text-foreground"
               variants={titleVariants}>
               <span className="text-primary">{t("hero.title")}</span>
-            </motion.h1>
+            </motion.h2>
 
             {/* Mobile Image - Only visible on mobile */}
             <motion.div
@@ -114,7 +114,7 @@ export const Hero = () => {
               <div className="relative w-full h-full">
                 <Image
                   src={heroImage}
-                  alt="Snowman Premium Product"
+                  alt="Snowman Split Klima - Enerji Tasarruflu İnverter Duvar Tipi Klima Sistemi"
                   fill
                   className="object-contain drop-shadow-2xl"
                   priority
@@ -123,7 +123,7 @@ export const Hero = () => {
             </motion.div>
 
             <motion.p
-              className="text-lg  md:text-2xl text-muted-foreground font-light max-w-xl leading-relaxed"
+              className="text-lg  md:text-xl text-muted-foreground font-light max-w-xl leading-relaxed"
               variants={itemVariants}>
               {t("hero.subtitle")}
             </motion.p>
@@ -192,7 +192,7 @@ export const Hero = () => {
             <div className="relative w-full h-full">
               <Image
                 src={heroImage}
-                alt="Snowman Premium Product"
+                alt="Snowman Split Air Conditioner - Energy Efficient Inverter Wall Mounted AC System"
                 fill
                 className="object-contain drop-shadow-2xl"
                 priority

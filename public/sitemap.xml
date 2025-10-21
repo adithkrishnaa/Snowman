@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <!-- Homepage / Ana Sayfa -->
+  <url>
+    <loc>https://www.snowmanclimate.com/</loc>
+    <lastmod>2025-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snowmanclimate.com/" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.snowmanclimate.com/" />
+    <image:image>
+      <image:loc>https://www.snowmanclimate.com/products/product1.jpg</image:loc>
+      <image:title>Snowman Split Air Conditioner</image:title>
+      <image:caption>Energy-efficient split AC systems</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Products / Ürünler -->
+  <url>
+    <loc>https://www.snowmanclimate.com/#products</loc>
+    <lastmod>2025-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snowmanclimate.com/#products" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.snowmanclimate.com/#products" />
+  </url>
+
+  <!-- About / Hakkımızda -->
+  <url>
+    <loc>https://www.snowmanclimate.com/#about</loc>
+    <lastmod>2025-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snowmanclimate.com/#about" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.snowmanclimate.com/#about" />
+  </url>
+
+  <!-- Contact / İletişim -->
+  <url>
+    <loc>https://www.snowmanclimate.com/#contact</loc>
+    <lastmod>2025-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://www.snowmanclimate.com/#contact" />
+    <xhtml:link rel="alternate" hreflang="tr" href="https://www.snowmanclimate.com/#contact" />
+  </url>
+
+  <!-- Catalog PDF / Katalog PDF -->
+  <url>
+    <loc>https://www.snowmanclimate.com/catalog.pdf</loc>
+    <lastmod>2025-10-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
+</urlset>
+

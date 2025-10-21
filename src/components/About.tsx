@@ -9,7 +9,8 @@ export default function About() {
   return (
     <section
       id="about"
-      className="py-10 md:py-24 bg-gradient-to-br from-accent/20 via-background to-primary/5 relative overflow-hidden">
+      className="py-10 md:py-24 bg-gradient-to-br from-accent/20 via-background to-primary/5 relative overflow-hidden"
+      aria-labelledby="about-heading">
       {/* Background Pattern */}
       <div className="hidden md:absolute inset-0 opacity-5">
         <div className="absolute top-20 left-20 w-32 h-32 bg-primary rounded-full blur-3xl"></div>
@@ -22,6 +23,7 @@ export default function About() {
           {/* Header */}
           <AnimatedSection className="text-center mb-20" delay={0.2}>
             <motion.h2
+              id="about-heading"
               className="text-5xl md:text-6xl font-display font-bold text-foreground mb-8"
               initial={{ scale: 0.8, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}

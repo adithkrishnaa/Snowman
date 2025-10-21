@@ -1,0 +1,37 @@
+# robots.txt for Snowman Climate Systems
+# https://www.snowmanclimate.com
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /admin/
+
+# Sitemaps
+Sitemap: https://www.snowmanclimate.com/sitemap.xml
+
+# Crawl-delay for specific bots
+User-agent: Googlebot
+Crawl-delay: 0
+
+User-agent: Bingbot
+Crawl-delay: 0
+
+User-agent: Yandex
+Crawl-delay: 0
+
+# Allow crawling of images
+User-agent: Googlebot-Image
+Allow: /products/
+Allow: /public/
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+

@@ -20,72 +20,112 @@ import Product4 from "../Assets/product15.png";
 import Product5 from "../Assets/product8.png";
 import Product6 from "../Assets/product11.png";
 import { StaggeredChildren } from "./AnimatedSection";
+import useLanguage from "@/lib/language-context";
 
 const products = [
   {
     id: 1,
-    name: "Split Air Conditioning",
+    name: "Split Air Conditioning Systems",
+    nameTr: "Split Klima Sistemleri",
     description:
-      "Energy-efficient cooling solutions for modern homes and offices",
-    features: ["Energy Star Certified", "WiFi Control", "5-Year Warranty"],
+      "Energy-efficient wall-mounted split AC solutions for homes and offices",
+    descriptionTr: "Ev ve ofisler için enerji tasarruflu duvar tipi split klima çözümleri",
+    features: ["A++ Energy Class", "WiFi Control", "5 Year Warranty"],
+    featuresTr: ["A++ Enerji Sınıfı", "WiFi Kontrol", "5 Yıl Garanti"],
     gradient: "from-blue-500/20 via-cyan-500/20 to-blue-600/20",
     accentColor: "bg-blue-500",
     icon: "❄️",
     image: Product1,
+    price: "₺12,000",
+    brand: "Snowman",
+    category: "Split AC",
+    categoryTr: "Split Klima",
   },
   {
     id: 2,
-    name: "Solar Air Conditioner",
-    description: "Professional-grade heating and cooling for large spaces",
-    features: ["Industrial Grade", "Remote Monitoring", "Custom Solutions"],
+    name: "Solar Inverter Air Conditioner",
+    nameTr: "Solar İnverter Klima",
+    description: "Solar powered inverter AC - Maximum energy savings",
+    descriptionTr: "Güneş enerjili inverter klima - Maksimum enerji tasarrufu",
+    features: ["Solar Panel Integrated", "Inverter Technology", "Eco-Friendly"],
+    featuresTr: ["Solar Panel Entegre", "İnverter Teknoloji", "Eco-Friendly"],
     gradient: "from-purple-500/20 via-pink-500/20 to-purple-600/20",
     accentColor: "bg-purple-500",
     icon: "🏢",
     image: Product2,
+    price: "₺25,000",
+    brand: "Snowman",
+    category: "Inverter AC",
+    categoryTr: "İnverter Klima",
   },
   {
     id: 3,
-    name: "Central Air Conditioner",
-    description: "Intelligent temperature control with advanced automation",
-    features: ["AI Learning", "Voice Control", "Energy Reports"],
+    name: "Central Air Conditioning Systems",
+    nameTr: "Merkezi Klima Sistemleri",
+    description: "Advanced central AC solutions for commercial buildings",
+    descriptionTr: "Ticari binalar için gelişmiş merkezi klima çözümleri",
+    features: ["Smart Control", "Voice Command", "Energy Reports"],
+    featuresTr: ["Akıllı Kontrol", "Sesli Komut", "Enerji Raporları"],
     gradient: "from-emerald-500/20 via-teal-500/20 to-emerald-600/20",
     accentColor: "bg-emerald-500",
     icon: "🎛️",
     image: Product3,
+    price: "₺45,000",
+    brand: "Snowman",
+    category: "Commercial HVAC",
+    categoryTr: "Ticari Klima",
   },
   {
     id: 4,
     name: "DC Inverter Heat Pump",
-    description: "Advanced filtration systems for cleaner indoor air",
-    features: ["HEPA Filters", "UV Sterilization", "Smart Sensors"],
+    nameTr: "DC İnverter Isı Pompası",
+    description: "High efficiency inverter system for both heating and cooling",
+    descriptionTr: "Hem ısıtma hem soğutma için yüksek verimli inverter sistem",
+    features: ["DC Inverter", "4 Season Use", "Quiet Operation"],
+    featuresTr: ["DC İnverter", "4 Mevsim Kullanım", "Sessiz Çalışma"],
     gradient: "from-green-500/20 via-lime-500/20 to-green-600/20",
     accentColor: "bg-green-500",
-
     image: Product4,
+    price: "₺18,500",
+    brand: "Snowman",
+    category: "Inverter AC",
+    categoryTr: "İnverter Klima",
   },
   {
     id: 5,
     name: "RV Air Conditioner",
-    description: "Eco-friendly heating and cooling in one efficient system",
-
+    nameTr: "Karavan Kliması",
+    description: "Compact and powerful RV air conditioner for mobile living",
+    descriptionTr: "Kompakt ve güçlü karavan/RV kliması - Mobil yaşam için ideal",
     gradient: "from-orange-500/20 via-amber-500/20 to-orange-600/20",
     accentColor: "bg-orange-500",
-
     image: Product5,
+    price: "₺15,000",
+    brand: "Snowman",
+    category: "Special Applications",
+    categoryTr: "Özel Uygulamalar",
   },
   {
     id: 6,
-    name: "Marine Air Conditioner",
-    description: "Professional maintenance and repair services",
-    features: ["24/7 Support", "Preventive Care", "Expert Technicians"],
+    name: "Marine Air Conditioning Systems",
+    nameTr: "Marine Klima Sistemleri",
+    description: "Corrosion-resistant air conditioning for marine vessels",
+    descriptionTr: "Deniz araçları için korozyona dayanıklı klima sistemleri",
+    features: ["Saltwater Resistant", "24/7 Support", "Professional Installation"],
+    featuresTr: ["Deniz Suyu Direnci", "7/24 Destek", "Profesyonel Montaj"],
     gradient: "from-indigo-500/20 via-violet-500/20 to-indigo-600/20",
     accentColor: "bg-indigo-500",
     icon: "🔧",
     image: Product6,
+    price: "₺22,000",
+    brand: "Snowman",
+    category: "Special Applications",
+    categoryTr: "Özel Uygulamalar",
   },
 ];
 
 export default function Product() {
+  const { language } = useLanguage();
   const headerRef = useRef(null);
   const productsRef = useRef(null);
   const ctaRef = useRef(null);
@@ -96,6 +136,30 @@ export default function Product() {
     margin: "-50px",
   });
   const ctaInView = useInView(ctaRef, { once: true, margin: "-100px" });
+
+  // Product Schema for SEO
+  const generateProductSchema = (product: typeof products[0]) => ({
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    description: product.description,
+    brand: {
+      "@type": "Brand",
+      name: product.brand,
+    },
+    category: product.category,
+    offers: {
+      "@type": "Offer",
+      price: product.price?.replace("₺", "").replace(",", ""),
+      priceCurrency: "TRY",
+      availability: "https://schema.org/InStock",
+      seller: {
+        "@type": "Organization",
+        name: "Snowman Climate Systems",
+      },
+    },
+    image: product.image.src,
+  });
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -157,7 +221,7 @@ export default function Product() {
   };
 
   return (
-    <section className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-50 py-10 md:py-32 px-4 relative overflow-hidden">
+    <section id="products" className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-50 py-10 md:py-32 px-4 relative overflow-hidden" aria-labelledby="products-heading">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
@@ -186,11 +250,12 @@ export default function Product() {
             transition={{ duration: 0.2 }}>
             <Sparkles className="w-4 h-4 text-blue-600" />
             <span className="text-sm font-medium text-slate-700">
-              Premium Solutions
+              Premium Climate Solutions
             </span>
           </motion.div>
 
           <motion.h2
+            id="products-heading"
             className="text-4xl md:text-7xl font-bold text-slate-900 tracking-tight"
             variants={itemVariants}>
             Our{" "}
@@ -202,8 +267,7 @@ export default function Product() {
           <motion.p
             className="md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed"
             variants={itemVariants}>
-            Discover our comprehensive range of cutting-edge climate control
-            solutions designed to transform your living and working spaces
+            Split AC, inverter air conditioners, and commercial HVAC systems - Advanced climate control solutions for your living and working spaces
           </motion.p>
         </motion.div>
 
@@ -215,7 +279,7 @@ export default function Product() {
           initial="hidden"
           animate={productsInView ? "visible" : "hidden"}>
           {products.map((product, index) => (
-            <motion.div
+            <motion.article
               key={product.id}
               className="group relative"
               variants={cardVariants}
@@ -224,7 +288,15 @@ export default function Product() {
                 scale: 1.02,
                 transition: { duration: 0.3 },
               }}
-              whileTap={{ scale: 0.98 }}>
+              whileTap={{ scale: 0.98 }}
+              itemScope
+              itemType="https://schema.org/Product">
+              <script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                  __html: JSON.stringify(generateProductSchema(product)),
+                }}
+              />
               {/* Card */}
               <div className="relative h-full bg-white rounded-3xl overflow-hidden  hover:shadow-2xl transition-all duration-500 border border-slate-200/50">
                 {/* Image Section with Modern Design */}
@@ -253,10 +325,11 @@ export default function Product() {
                       }}>
                       <Image
                         src={product.image}
-                        alt={product.name}
+                        alt={`${product.name} - ${product.description} - Snowman Climate`}
                         fill
                         className="object-contain drop-shadow-2xl transition-all duration-700"
                         sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                        loading="lazy"
                       />
                     </motion.div>
                   </div>
@@ -286,13 +359,15 @@ export default function Product() {
 
                 {/* Content Section */}
                 <div className="p-8">
-                  <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors duration-300">
-                    {product.name}
+                  <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors duration-300" itemProp="name">
+                    {language === 'tr' && product.nameTr ? product.nameTr : product.name}
                   </h3>
 
-                  <p className="text-slate-600 mb-6 leading-relaxed">
-                    {product.description}
+                  <p className="text-slate-600 mb-6 leading-relaxed" itemProp="description">
+                    {language === 'tr' && product.descriptionTr ? product.descriptionTr : product.description}
                   </p>
+                  
+               
 
                   {/* CTA Button */}
                   <motion.button
@@ -315,7 +390,7 @@ export default function Product() {
                 {/* Hover Effect Border */}
                 <div className="absolute inset-0 rounded-3xl border-2 border-transparent group-hover:border-blue-400/50 transition-all duration-500 pointer-events-none"></div>
               </div>
-            </motion.div>
+            </motion.article>
           ))}
         </motion.div>
 
