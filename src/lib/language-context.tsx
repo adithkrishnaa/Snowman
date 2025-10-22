@@ -86,7 +86,7 @@ const translations = {
     "about.couftext":
       "Memnuniyetiniz bizim için en önemli önceliktir. Özel ihtiyaçlarınızı karşılamak için kişiselleştirilmiş hizmet ve destek sağlıyoruz.",
     "about.inov": "Yenilik",
-    " about.inovtext":
+    "about.inovtext":
       "Modern zorlukların üstesinden gelmek için ileri düzey çözümler ve yenilikçi yaklaşımlarla sektöre öncülük ediyoruz.",
 
     // Products
