@@ -113,7 +113,7 @@ export default function About() {
                     </h3>
                     <p className="text-muted-foreground leading-relaxed">
                       {t("about.inovtext")}
-                      </p>
+                    </p>
                   </div>
                 </div>
               </motion.div>
@@ -127,7 +127,7 @@ export default function About() {
                     500+
                   </div>
                   <div className="text-sm text-muted-foreground uppercase tracking-wide">
-                    Products
+                    {t("Product")}
                   </div>
                 </div>
                 <div className="bg-white/90 backdrop-blur-sm p-6 rounded-2xl text-center shadow-lg hover:shadow-xl transition-all duration-300">
@@ -135,7 +135,7 @@ export default function About() {
                     1+
                   </div>
                   <div className="text-sm text-muted-foreground uppercase tracking-wide">
-                    Years
+                    {t("Years")}
                   </div>
                 </div>
                 <div className="bg-white/90 backdrop-blur-sm p-6 rounded-2xl text-center shadow-lg hover:shadow-xl transition-all duration-300">
@@ -143,7 +143,7 @@ export default function About() {
                     24/7
                   </div>
                   <div className="text-sm text-muted-foreground uppercase tracking-wide">
-                    Support
+                    {t("Support")}
                   </div>
                 </div>
                 <div className="bg-white/90 backdrop-blur-sm p-6 rounded-2xl text-center shadow-lg hover:shadow-xl transition-all duration-300">
@@ -160,12 +160,10 @@ export default function About() {
               <div className="bg-gradient-to-br from-primary/10 to-secondary/10 p-8 rounded-3xl border border-primary/20">
                 <h4 className="text-2xl font-semibold text-foreground mb-4 flex items-center">
                   <Globe className="h-6 w-6 text-primary mr-3" />
-                  Our Mission
+                  {t("ourversion")}
                 </h4>
                 <p className="text-muted-foreground leading-relaxed">
-                  To deliver exceptional products and services that exceed
-                  customer expectations while maintaining the highest standards
-                  of quality, innovation, and reliability in everything we do.
+                  {t("ourmis.text")}
                 </p>
               </div>
             </div>
@@ -178,10 +176,10 @@ export default function About() {
                 <CheckCircle className="h-8 w-8 text-primary" />
               </div>
               <h4 className="text-xl font-semibold text-foreground">
-                Reliability
+                {t("Reliability")}
               </h4>
               <p className="text-muted-foreground">
-                Consistent quality and dependable service you can trust.
+                {t("reliability.text")}
               </p>
             </div>
             <div className="text-center space-y-4">
@@ -189,10 +187,10 @@ export default function About() {
                 <Target className="h-8 w-8 text-secondary" />
               </div>
               <h4 className="text-xl font-semibold text-foreground">
-                Excellence
+                {t("Excellence")}
               </h4>
               <p className="text-muted-foreground">
-                Striving for perfection in every product and interaction.
+                {t("exce.text")}
               </p>
             </div>
             <div className="text-center space-y-4">
@@ -200,10 +198,10 @@ export default function About() {
                 <Users className="h-8 w-8 text-primary-light" />
               </div>
               <h4 className="text-xl font-semibold text-foreground">
-                Partnership
+              { t ("Partnership")}
               </h4>
               <p className="text-muted-foreground">
-                Building lasting relationships with our valued customers.
+                {t("part.text")}
               </p>
             </div>
           </div>

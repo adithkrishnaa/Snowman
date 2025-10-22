@@ -125,7 +125,7 @@ const products = [
 ];
 
 export default function Product() {
-  const { language } = useLanguage();
+  const { language, t } = useLanguage();
   const headerRef = useRef(null);
   const productsRef = useRef(null);
   const ctaRef = useRef(null);
@@ -227,7 +227,10 @@ export default function Product() {
   };
 
   return (
-    <section id="products" className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-50 py-10 md:py-32 px-4 relative overflow-hidden" aria-labelledby="products-heading">
+    <section
+      id="products"
+      className="min-h-screen bg-gradient-to-b from-slate-50 via-white to-slate-50 py-10 md:py-32 px-4 relative overflow-hidden"
+      aria-labelledby="products-heading">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
@@ -256,7 +259,7 @@ export default function Product() {
             transition={{ duration: 0.2 }}>
             <Sparkles className="w-4 h-4 text-blue-600" />
             <span className="text-sm font-medium text-slate-700">
-              Premium Climate Solutions
+              {t("products.premiumClimate")}
             </span>
           </motion.div>
 
@@ -264,16 +267,13 @@ export default function Product() {
             id="products-heading"
             className="text-4xl md:text-7xl font-bold text-slate-900 tracking-tight"
             variants={itemVariants}>
-            Our{" "}
-            <span className="bg-gradient-to-r from-green-600 via-green-600 to-green-600 bg-clip-text text-transparent">
-              Products
-            </span>
+            {t("products.title")}
           </motion.h2>
 
           <motion.p
             className="md:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed"
             variants={itemVariants}>
-            Split AC, inverter air conditioners, and commercial HVAC systems - Advanced climate control solutions for your living and working spaces
+            {t("products.description")}
           </motion.p>
         </motion.div>
 
@@ -343,7 +343,7 @@ export default function Product() {
                   {/* Category Badge - Top Left */}
                   <div className="absolute top-6 left-6 px-4 py-2 bg-green-500 backdrop-blur-lg rounded-full border border-green-300 shadow-xl">
                     <span className="text-xs  font-semibold text-white uppercase tracking-wider">
-                      Premium
+                      {t("products.premium")}
                     </span>
                   </div>
 
@@ -365,26 +365,33 @@ export default function Product() {
 
                 {/* Content Section */}
                 <div className="p-8">
-                  <h3 className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors duration-300" itemProp="name">
-                    {language === 'tr' && product.nameTr ? product.nameTr : product.name}
+                  <h3
+                    className="text-2xl font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors duration-300"
+                    itemProp="name">
+                    {language === "tr" && product.nameTr
+                      ? product.nameTr
+                      : product.name}
                   </h3>
 
-                  <p className="text-slate-600 mb-6 leading-relaxed" itemProp="description">
-                    {language === 'tr' && product.descriptionTr ? product.descriptionTr : product.description}
+                  <p
+                    className="text-slate-600 mb-6 leading-relaxed"
+                    itemProp="description">
+                    {language === "tr" && product.descriptionTr
+                      ? product.descriptionTr
+                      : product.description}
                   </p>
-                  
-               
 
                   {/* CTA Button */}
                   <motion.button
-                    className="w-full bg-green-700 hover:bg-green-600 text-white py-4 rounded-2xl font-medium transition-all duration-300 flex items-center justify-center gap-2 group/btn shadow-lg hover:shadow-xl"
+                    onClick={handleDownloadCatalog}
+                    className="w-full bg-green-700 hover:bg-green-600 text-white py-4 rounded-2xl font-medium transition-all duration-300 flex items-center justify-center gap-2 group/btn shadow-lg hover:shadow-xl cursor-pointer"
                     whileHover={{
                       scale: 1.02,
                       boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
                       transition: { duration: 0.2 },
                     }}
                     whileTap={{ scale: 0.98 }}>
-                    <span>View Details</span>
+                    <span>{t("products.viewDetails")}</span>
                     <motion.div
                       whileHover={{ x: 4 }}
                       transition={{ duration: 0.2 }}>
@@ -436,26 +443,25 @@ export default function Product() {
                 transition={{ duration: 0.2 }}>
                 <Download className="w-4 h-4 text-blue-400" />
                 <span className="text-xs md:text-sm font-medium text-white">
-                  Full Catalog Available
+                  {t("products.fullCatalog")}
                 </span>
               </motion.div>
 
               <motion.h3
                 className="text-2xl md:text-5xl font-bold text-white mb-4"
                 variants={itemVariants}>
-                Explore Our Complete Range
+                {t("products.exploreRange")}
               </motion.h3>
 
               <motion.p
                 className="text-base md:text-xl text-slate-300 max-w-2xl mx-auto"
                 variants={itemVariants}>
-                Download our comprehensive catalog to discover all our premium
-                products, specifications, and exclusive offers
+                {t("products.catalogDescription")}
               </motion.p>
 
               <motion.button
                 onClick={handleDownloadCatalog}
-                className="inline-flex items-center gap-3 bg-white hover:bg-blue-50 text-slate-900 px-10 py-5 rounded-2xl font-semibold text-xs md:text-lg transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 group"
+                className="inline-flex items-center gap-3 bg-white hover:bg-blue-50 text-slate-900 px-10 py-5 rounded-2xl font-semibold text-xs md:text-lg transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 group cursor-pointer"
                 variants={itemVariants}
                 whileHover={{
                   scale: 1.05,
@@ -468,7 +474,9 @@ export default function Product() {
                   transition={{ duration: 0.2 }}>
                   <Download className="w-6 h-6" />
                 </motion.div>
-                <span className=" whitespace-nowrap">Download Catalog</span>
+                <span className=" whitespace-nowrap">
+                  {t("products.viewCatalog")}
+                </span>
               </motion.button>
 
               {/* Trust Indicators */}
@@ -490,10 +498,10 @@ export default function Product() {
                   </motion.div>
                   <div className="text-center">
                     <div className="font-semibold text-white text-lg">
-                      Premium Quality
+                      {t("products.premiumQuality")}
                     </div>
                     <div className="text-sm text-slate-400">
-                      Certified Products
+                      {t("products.certifiedProducts")}
                     </div>
                   </div>
                 </motion.div>
@@ -511,9 +519,11 @@ export default function Product() {
                   </motion.div>
                   <div className="text-center">
                     <div className="font-semibold text-white text-lg">
-                      Extended Warranty
+                      {t("products.extendedWarranty")}
                     </div>
-                    <div className="text-sm text-slate-400">Up to 5 Years</div>
+                    <div className="text-sm text-slate-400">
+                      {t("products.upToYears")}
+                    </div>
                   </div>
                 </motion.div>
 
@@ -530,10 +540,10 @@ export default function Product() {
                   </motion.div>
                   <div className="text-center">
                     <div className="font-semibold text-white text-lg">
-                      Fast Service
+                      {t("products.fastService")}
                     </div>
                     <div className="text-sm text-slate-400">
-                      Quick Installation
+                      {t("products.quickInstallation")}
                     </div>
                   </div>
                 </motion.div>
@@ -559,12 +569,10 @@ export default function Product() {
                 </motion.div>
                 <div>
                   <h3 className="text-lg md:text-2xl font-semibold text-foreground mb-3">
-                    Premium Quality
+                    {t("about.per")}
                   </h3>
                   <p className="text-xs md:text-base text-muted-foreground ">
-                    We maintain the highest standards in every product, ensuring
-                    exceptional quality and durability that exceeds
-                    expectations.
+                    {t("about.pertext")}
                   </p>
                 </div>
               </div>
@@ -583,11 +591,10 @@ export default function Product() {
                 </motion.div>
                 <div>
                   <h3 className="text-lg md:text-2xl font-semibold text-foreground mb-3">
-                    Customer Focus
+                    {t("about.couf")}
                   </h3>
                   <p className="text-xs md:text-base text-muted-foreground ">
-                    Your satisfaction is our top priority. We provide
-                    personalized service and support to meet your unique needs.
+                    {t("about.couftext")}
                   </p>
                 </div>
               </div>
@@ -606,11 +613,10 @@ export default function Product() {
                 </motion.div>
                 <div>
                   <h3 className="text-lg md:text-2xl font-semibold text-foreground mb-3">
-                    Innovation
+                    {t("about.inov")}
                   </h3>
                   <p className="text-xs md:text-base text-muted-foreground ">
-                    Leading the industry with cutting-edge solutions and
-                    innovative approaches to meet modern challenges.
+                    {t("about.inovtext")}
                   </p>
                 </div>
               </div>
@@ -623,13 +629,13 @@ export default function Product() {
               <div className="bg-white/90 backdrop-blur-sm p-3 rounded-2xl text-center shadow-lg hover:shadow-xl transition-all duration-300">
                 <div className="text-2xl font-bold text-primary mb-2">500+</div>
                 <div className="text-sm text-muted-foreground uppercase tracking-wide">
-                  Products
+                  {t("Product")}
                 </div>
               </div>
               <div className="bg-white/90 backdrop-blur-sm p-3 rounded-2xl text-center shadow-lg hover:shadow-xl transition-all duration-300">
                 <div className="text-3xl font-bold text-secondary mb-2">1+</div>
                 <div className="text-sm text-muted-foreground uppercase tracking-wide">
-                  Years
+                  {t("Years")}
                 </div>
               </div>
               <div className="bg-white/90 backdrop-blur-sm p-3 rounded-2xl text-center shadow-lg hover:shadow-xl transition-all duration-300">
@@ -637,13 +643,13 @@ export default function Product() {
                   24/7
                 </div>
                 <div className="text-sm text-muted-foreground uppercase tracking-wide">
-                  Support
+                  {t("Support")}
                 </div>
               </div>
               <div className="bg-white/90 backdrop-blur-sm p-3 rounded-2xl text-center shadow-lg hover:shadow-xl transition-all duration-300">
                 <div className="text-2xl font-bold text-primary mb-2">50+</div>
                 <div className="text-sm text-muted-foreground uppercase tracking-wide">
-                  Countries
+                  {t("products.countries")}
                 </div>
               </div>
             </div>
@@ -652,12 +658,10 @@ export default function Product() {
             <div className="bg-gradient-to-br from-primary/10 to-secondary/10 p-4 rounded-3xl border border-primary/20">
               <h4 className="text-2xl font-semibold text-foreground mb-4 flex items-center">
                 <Globe className="h-6 w-6 text-primary mr-3" />
-                Our Mission
+                {t("ourversion")}
               </h4>
               <p className="text-xs text-muted-foreground leading-relaxed">
-                To deliver exceptional products and services that exceed
-                customer expectations while maintaining the highest standards of
-                quality, innovation, and reliability in everything we do.
+                {t("ourmis.text")}
               </p>
             </div>
           </div>
@@ -670,10 +674,10 @@ export default function Product() {
               <CheckCircle className="h-8 w-8 text-primary" />
             </div>
             <h4 className="text-xl font-semibold text-foreground">
-              Reliability
+              {t("Reliability")}
             </h4>
             <p className="text-xs text-muted-foreground">
-              Consistent quality and dependable service you can trust.
+              {t("reliability.text")}
             </p>
           </div>
           <div className="text-center space-y-4">
@@ -681,22 +685,18 @@ export default function Product() {
               <Target className="h-8 w-8 text-secondary" />
             </div>
             <h4 className="text-xl font-semibold text-foreground">
-              Excellence
+              {t("Excellence")}
             </h4>
-            <p className="text-xs text-muted-foreground">
-              Striving for perfection in every product and interaction.
-            </p>
+            <p className="text-xs text-muted-foreground">{t("exce.text")}</p>
           </div>
           <div className="text-center space-y-4">
             <div className="bg-primary-light/10 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto">
               <Users className="h-8 w-8 text-primary-light" />
             </div>
             <h4 className="text-xl font-semibold text-foreground">
-              Partnership
+              {t("Partnership")}
             </h4>
-            <p className="text-xs text-muted-foreground">
-              Building lasting relationships with our valued customers.
-            </p>
+            <p className="text-xs text-muted-foreground">{t("part.text")}</p>
           </div>
         </div>
       </div>

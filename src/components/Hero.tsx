@@ -165,19 +165,19 @@ export const Hero = () => {
               variants={itemVariants}>
               <div className="text-left">
                 <div className="text-3xl font-bold text-primary">500+</div>
-                <div className="text-sm text-muted-foreground">Products</div>
+                <div className="text-sm text-muted-foreground">{t("Product")}</div>
               </div>
               <div className="text-left">
                 <div className="text-3xl font-bold text-secondary">1+</div>
                 <div className="text-sm text-muted-foreground">
-                  Years Experience
+                  {t("Years")}
                 </div>
               </div>
               <div className="text-left">
                 <div className="text-3xl font-bold text-primary-light">
                   24/7
                 </div>
-                <div className="text-sm text-muted-foreground">Support</div>
+                <div className="text-sm text-muted-foreground">{t("Support")}</div>
               </div>
             </motion.div>
           </div>
