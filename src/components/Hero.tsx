@@ -9,11 +9,13 @@ import { motion } from "framer-motion";
 import { useScrollAnimation } from "@/lib/useScrollAnimation";
 
 export const Hero = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { ref: imageRef, inView: imageInView } = useScrollAnimation(0.3);
 
   const handleDownloadCatalog = () => {
-    window.open('/catalog.pdf', '_blank');
+    // Download the appropriate catalog based on the selected language
+    const catalogUrl = language === 'en' ? '/catalog-en.pdf' : '/catalog-tr.pdf';
+    window.open(catalogUrl, '_blank');
   };
 
   const scrollToContact = () => {
@@ -98,7 +100,7 @@ export const Hero = () => {
           {/* Left: Text */}
           <div className="md:space-y-8 text-left ">
             <motion.h2
-              className="text-3xl md:text-5xl font-display font-bold leading-tight text-foreground"
+              className="text-3xl md:text-6xl font-display font-bold leading-tight text-foreground"
               variants={titleVariants}>
               <span className="text-primary">{t("hero.title")}</span>
             </motion.h2>
@@ -123,7 +125,7 @@ export const Hero = () => {
             </motion.div>
 
             <motion.p
-              className="text-lg  md:text-xl text-muted-foreground font-light max-w-xl leading-relaxed"
+              className="text-lg  md:text-2xl text-muted-foreground font-light max-w-xl leading-relaxed"
               variants={itemVariants}>
               {t("hero.subtitle")}
             </motion.p>

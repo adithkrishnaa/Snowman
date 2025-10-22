@@ -19,29 +19,42 @@ const translations = {
 
     // Hero
     "hero.title": "Snowman Split & Inverter Air Conditioning Systems",
-    "hero.subtitle": "Turkey's leading manufacturer of split AC, wall-mounted air conditioners, and commercial HVAC systems. Professional service with energy-efficient inverter climate solutions.",
+    "hero.subtitle":
+      "Turkey's leading manufacturer of split AC, wall-mounted air conditioners, and commercial HVAC systems. Professional service with energy-efficient inverter climate solutions.",
     "hero.cta": "Download Catalog",
     "hero.contact": "Get a Quote",
 
     // About
-    "about.title": "About Snowman Climate",
+    "about.title": "About Snowman ",
     "about.text":
       "As Snowman Climate Systems, we are one of Turkey's leading manufacturers in split air conditioning, wall-mounted AC units, and commercial HVAC systems. With our inverter technology air conditioning systems, we provide energy-efficient and eco-friendly solutions. We guarantee customer satisfaction with professional AC installation, after-sales service, and 24/7 technical support.",
+    "about.per": "Premium Quality",
+    "about.pertext":
+      "We maintain the highest standards in every product, ensuring exceptional quality and durability that exceeds expectations.",
+    "about.couf": "Customer Focus",
+    "about.couftext":
+      "Your satisfaction is our top priority. We provide personalized service and support to meet your unique needs.",
+    "about.inov": "Innovation",
+    "about.inovtext":
+      "Leading the industry with cutting-edge solutions and innovative approaches to meet modern challenges.",
 
     // Products
     "products.title": "Our Products",
-    "products.subtitle": "Split AC, inverter air conditioners, and commercial HVAC systems",
+    "products.subtitle":
+      "Split AC, inverter air conditioners, and commercial HVAC systems",
     "products.viewCatalog": "Download Catalog",
 
     // Contact
     "contact.title": "Get AC Quote & Contact",
-    "contact.subtitle": "Contact us for split AC prices and product information",
+    "contact.subtitle":
+      "Contact us for split AC prices and product information",
     "contact.name": "Full Name",
     "contact.email": "Email",
     "contact.phone": "Phone",
     "contact.message": "Your Message (AC model, capacity, etc.)",
     "contact.send": "Request Quote",
-    "contact.success": "Your request has been received! We'll get back to you soon.",
+    "contact.success":
+      "Your request has been received! We'll get back to you soon.",
     "contact.error": "Failed to send message. Please try again.",
 
     // Footer
@@ -57,23 +70,35 @@ const translations = {
 
     // Hero
     "hero.title": "Snowman Split Klima ve İnverter Klima Sistemleri",
-    "hero.subtitle": "Türkiye'nin lider duvar tipi klima, split klima ve ticari klima sistemleri üreticisi. Enerji tasarruflu inverter klima çözümleri ile konforunuz için profesyonel hizmet.",
+    "hero.subtitle":
+      "Türkiye'nin lider duvar tipi klima, split klima ve ticari klima sistemleri üreticisi. Enerji tasarruflu inverter klima çözümleri ile konforunuz için profesyonel hizmet.",
     "hero.cta": "Klima Kataloğunu İndir",
     "hero.contact": "Fiyat Teklifi Alın",
 
     // About
-    "about.title": "Snowman Klima Hakkında",
+    "about.title": "Snowman Klima ",
     "about.text":
       "Snowman Climate Systems olarak, split klima, duvar tipi klima ve ticari klima sistemleri alanında Türkiye'nin önde gelen üreticilerinden biriyiz. İnverter teknolojili klima sistemlerimiz ile enerji tasarruflu ve çevre dostu çözümler sunuyoruz. Profesyonel klima montajı, satış sonrası servis ve 7/24 teknik destek ile müşteri memnuniyetini garanti ediyoruz.",
+    "about.per": "Üstün Kalite",
+    "about.pertext":
+      "Her üründe en yüksek standartları koruyor, beklentileri aşan olağanüstü kalite ve dayanıklılık sağlıyoruz.",
+    "about.couf": "Müşteri Odaklılık",
+    "about.couftext":
+      "Memnuniyetiniz bizim için en önemli önceliktir. Özel ihtiyaçlarınızı karşılamak için kişiselleştirilmiş hizmet ve destek sağlıyoruz.",
+    "about.inov": "Yenilik",
+    " about.inovtext":
+      "Modern zorlukların üstesinden gelmek için ileri düzey çözümler ve yenilikçi yaklaşımlarla sektöre öncülük ediyoruz.",
 
     // Products
     "products.title": "Klima Ürünlerimiz",
-    "products.subtitle": "Split klima, inverter klima ve ticari klima sistemleri",
+    "products.subtitle":
+      "Split klima, inverter klima ve ticari klima sistemleri",
     "products.viewCatalog": "Klima Kataloğunu İndir",
 
     // Contact
     "contact.title": "Klima Fiyat Teklifi ve İletişim",
-    "contact.subtitle": "Split klima fiyatları ve ürün bilgisi için bize ulaşın",
+    "contact.subtitle":
+      "Split klima fiyatları ve ürün bilgisi için bize ulaşın",
     "contact.name": "Ad Soyad",
     "contact.email": "E-posta",
     "contact.phone": "Telefon",
@@ -94,7 +119,7 @@ const LanguageContext = createContext<LanguageContextType | undefined>(
 );
 
 export  function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguage] = useState<Language>("en"); // Default to English
+  const [language, setLanguage] = useState<Language>("tr"); // Default to English
 
   const t = (key: string): string => {
     return (

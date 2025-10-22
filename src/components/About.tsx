@@ -65,12 +65,10 @@ export default function About() {
                   </motion.div>
                   <div>
                     <h3 className="text-2xl font-semibold text-foreground mb-3">
-                      Premium Quality
+                      {t("about.per")}
                     </h3>
                     <p className="text-muted-foreground leading-relaxed">
-                      We maintain the highest standards in every product,
-                      ensuring exceptional quality and durability that exceeds
-                      expectations.
+                      {t("about.pertext")}
                     </p>
                   </div>
                 </div>
@@ -89,12 +87,10 @@ export default function About() {
                   </motion.div>
                   <div>
                     <h3 className="text-2xl font-semibold text-foreground mb-3">
-                      Customer Focus
+                      {t("about.couf")}
                     </h3>
                     <p className="text-muted-foreground leading-relaxed">
-                      Your satisfaction is our top priority. We provide
-                      personalized service and support to meet your unique
-                      needs.
+                      {t("about.couftext")}
                     </p>
                   </div>
                 </div>
@@ -113,12 +109,11 @@ export default function About() {
                   </motion.div>
                   <div>
                     <h3 className="text-2xl font-semibold text-foreground mb-3">
-                      Innovation
+                      {t("about.inov")}
                     </h3>
                     <p className="text-muted-foreground leading-relaxed">
-                      Leading the industry with cutting-edge solutions and
-                      innovative approaches to meet modern challenges.
-                    </p>
+                      {t("about.inovtext")}
+                      </p>
                   </div>
                 </div>
               </motion.div>

@@ -137,6 +137,12 @@ export default function Product() {
   });
   const ctaInView = useInView(ctaRef, { once: true, margin: "-100px" });
 
+  const handleDownloadCatalog = () => {
+    // Download the appropriate catalog based on the selected language
+    const catalogUrl = language === 'en' ? '/catalog-en.pdf' : '/catalog-tr.pdf';
+    window.open(catalogUrl, '_blank');
+  };
+
   // Product Schema for SEO
   const generateProductSchema = (product: typeof products[0]) => ({
     "@context": "https://schema.org",
@@ -448,6 +454,7 @@ export default function Product() {
               </motion.p>
 
               <motion.button
+                onClick={handleDownloadCatalog}
                 className="inline-flex items-center gap-3 bg-white hover:bg-blue-50 text-slate-900 px-10 py-5 rounded-2xl font-semibold text-xs md:text-lg transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105 group"
                 variants={itemVariants}
                 whileHover={{
