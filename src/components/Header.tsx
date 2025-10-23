@@ -1,10 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X, Globe } from "lucide-react";
-import {
-  motion,
-  AnimatePresence,
-} from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import snowmanLogo from "@/Assets/logogw.png";
 import Image from "next/image";
 import useLanguage from "@/lib/language-context";
@@ -13,7 +10,6 @@ export const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { t, language, setLanguage } = useLanguage();
-
 
   useEffect(() => {
     const handleScroll = () => {
@@ -24,11 +20,26 @@ export const Header = () => {
   }, []);
 
   const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-      setIsMobileMenuOpen(false);
-    }
+    // Close mobile menu first
+    setIsMobileMenuOpen(false);
+
+    // Small delay to allow menu animation to start
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        const headerOffset = 80; // Adjust based on your header height
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition =
+          elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth",
+        });
+      } else {
+        console.warn(`Section with id "${id}" not found`);
+      }
+    }, 100);
   };
 
   const toggleLanguage = () => {
@@ -106,8 +117,9 @@ export const Header = () => {
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden p-2"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+            className="md:hidden p-2 text-foreground"
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu">
             {isMobileMenuOpen ? (
               <X className="h-6 w-6" />
             ) : (
@@ -124,6 +136,7 @@ export const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.2 }}
             className="md:hidden bg-white/95 backdrop-blur-md border-t border-primary/10">
             <nav className="container mx-auto px-4 py-6 flex flex-col gap-4">
               {navItems.map((item) => (

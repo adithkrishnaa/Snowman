@@ -90,7 +90,7 @@ export const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-primary/10 via-accent/5 to-secondary/10" aria-label="Hero Section">
+    <section id="hero" className="relative min-h-screen flex items-center overflow-hidden bg-gradient-to-br from-primary/10 via-accent/5 to-secondary/10" aria-label="Hero Section">
       <div className="container relative z-10 px-4 py-20">
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-12 items-center px-2 lg:px-10"
