@@ -50,7 +50,7 @@ const translations = {
       "Consistent quality and dependable service you can trust.",
     "exce.text": "Striving for perfection in every product and interaction.",
     "part.text": "Building lasting relationships with our valued customers.",
-    Countrie: "Countries",
+    
 
     // Products
     "products.title": "Our Products",
