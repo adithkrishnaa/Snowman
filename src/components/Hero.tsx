@@ -168,7 +168,7 @@ export const Hero = () => {
                 <div className="text-sm text-muted-foreground">{t("Product")}</div>
               </div>
               <div className="text-left">
-                <div className="text-3xl font-bold text-secondary">1+</div>
+                <div className="text-3xl font-bold text-secondary">10+</div>
                 <div className="text-sm text-muted-foreground">
                   {t("Years")}
                 </div>

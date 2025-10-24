@@ -55,7 +55,7 @@ export const Footer = () => {
             <div className="lg:col-span-2 space-y-6">
               <div>
                 <h3 className="text-3xl font-display font-bold mb-4 text-white">
-                  Snowmann
+                  Snowman
                 </h3>
                 <p className="text-gray-300 text-lg leading-relaxed max-w-md">
                   {t("hero.subtitle")}
@@ -191,7 +191,7 @@ export const Footer = () => {
             <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
               <div className="text-gray-400 text-sm">
                 <p>
-                  © {new Date().getFullYear()} Snowmann. {t("footer.rights")}
+                  © {new Date().getFullYear()} Snowman. {t("footer.rights")}
                 </p>
               </div>
               

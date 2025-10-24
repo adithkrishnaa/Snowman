@@ -88,7 +88,7 @@ export const Contact = () => {
           <AnimatedSection className="text-center mb-20" delay={0.2}>
             <motion.h2 
               id="contact-heading"
-              className="text-5xl md:text-6xl font-display font-bold text-foreground mb-8"
+              className="text-3xl md:text-6xl font-display font-bold text-foreground mb-8"
               initial={{ scale: 0.8, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.8, ease: "backOut" }}
@@ -282,7 +282,7 @@ export const Contact = () => {
                         {language === 'en' ? 'Office' : 'Ofis'}
                       </h4>
                       <p className="text-muted-foreground">
-                        {language === 'en' ? 'Snowmann Headquarters' : 'Snowmann Genel Merkez'}
+                        {language === 'en' ? 'Snowman Headquarters' : 'Snowman Genel Merkez'}
                       </p>
                       <p className="text-sm text-muted-foreground mt-1">
                         {language === 'en' ? 'Turkey' : 'Türkiye'}

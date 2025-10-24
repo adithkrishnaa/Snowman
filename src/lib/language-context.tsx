@@ -37,18 +37,20 @@ const translations = {
     "about.inov": "Innovation",
     "about.inovtext":
       "Leading the industry with cutting-edge solutions and innovative approaches to meet modern challenges.",
-    "ourversion": "Our Mission",
+    ourversion: "Our Mission",
     "ourmis.text":
       " To deliver exceptional products and services that exceed customer expectations while maintaining the highest standards of quality, innovation, and reliability in everything we do.",
-    "Product": "Products",
-    "Years": "Years",
-    "Support": "Support",
-    "Reliability": "Reliability",
-    "Excellence": "Excellence",
-    "Partnership": "Partnership",
-    "reliability.text":"Consistent quality and dependable service you can trust.",
-    "exce.text":"Striving for perfection in every product and interaction.",
-    "part.text":"Building lasting relationships with our valued customers.",
+    Product: "Products",
+    Years: "Years",
+    Support: "Support",
+    Reliability: "Reliability",
+    Excellence: "Excellence",
+    Partnership: "Partnership",
+    "reliability.text":
+      "Consistent quality and dependable service you can trust.",
+    "exce.text": "Striving for perfection in every product and interaction.",
+    "part.text": "Building lasting relationships with our valued customers.",
+    Countrie: "Countries",
 
     // Products
     "products.title": "Our Products",
@@ -56,11 +58,13 @@ const translations = {
       "Split AC, inverter air conditioners, and commercial HVAC systems",
     "products.viewCatalog": "Download Catalog",
     "products.premiumClimate": "Premium Climate Solutions",
-    "products.description": "Split AC, inverter air conditioners, and commercial HVAC systems - Advanced climate control solutions for your living and working spaces",
+    "products.description":
+      "Split AC, inverter air conditioners, and commercial HVAC systems - Advanced climate control solutions for your living and working spaces",
     "products.premium": "Premium",
     "products.viewDetails": "View Details",
     "products.exploreRange": "Explore Our Complete Range",
-    "products.catalogDescription": "Download our comprehensive catalog to discover all our premium products, specifications, and exclusive offers",
+    "products.catalogDescription":
+      "Download our comprehensive catalog to discover all our premium products, specifications, and exclusive offers",
     "products.fullCatalog": "Full Catalog Available",
     "products.premiumQuality": "Premium Quality",
     "products.certifiedProducts": "Certified Products",
@@ -98,7 +102,7 @@ const translations = {
     "hero.title": "Snowman Split Klima ve İnverter Klima Sistemleri",
     "hero.subtitle":
       "Türkiye'nin lider duvar tipi klima, split klima ve ticari klima sistemleri üreticisi. Enerji tasarruflu inverter klima çözümleri ile konforunuz için profesyonel hizmet.",
-    "hero.cta": "Klima Kataloğunu İndir",
+    "hero.cta": "Kataloğu İndir",
     "hero.contact": "Fiyat Teklifi Alın",
 
     // About
@@ -114,18 +118,19 @@ const translations = {
     "about.inov": "Yenilik",
     "about.inovtext":
       "Modern zorlukların üstesinden gelmek için ileri düzey çözümler ve yenilikçi yaklaşımlarla sektöre öncülük ediyoruz.",
-    "ourversion": "Misyonumuz",
+    ourversion: "Misyonumuz",
     "ourmis.text":
       "Yaptığımız her şeyde en yüksek kalite, yenilikçilik ve güvenilirlik standartlarını korurken, müşteri beklentilerini aşan olağanüstü ürün ve hizmetler sunmak.",
-    "Product": "Ürünler",
-    "Years": "Yıllar",
-    "Support": "Destek",
-    "Reliability":"Güvenilirlik",
-    "Excellence": "Mükemmellik",
-    "Partnership": "ortaklık",
-    "reliability.text":"Güvenebileceğiniz tutarlı kalite ve güvenilir hizmet.",
-    "exce.text":"Her üründe ve etkileşimde mükemmelliğe ulaşmak için çabalıyoruz.",
-    "part.text":"Değerli müşterilerimizle kalıcı ilişkiler kurmak.",
+    Product: "Ürün",
+    Years: "Yıl",
+    Support: "Destek",
+    Reliability: "Güvenilirlik",
+    Excellence: "Mükemmellik",
+    Partnership: "ortaklık",
+    "reliability.text": "Güvenebileceğiniz tutarlı kalite ve güvenilir hizmet.",
+    "exce.text":
+      "Her üründe ve etkileşimde mükemmelliğe ulaşmak için çabalıyoruz.",
+    "part.text": "Değerli müşterilerimizle kalıcı ilişkiler kurmak istiyoruz.",
 
     // Products
     "products.title": "Klima Ürünlerimiz",
@@ -133,11 +138,13 @@ const translations = {
       "Split klima, inverter klima ve ticari klima sistemleri",
     "products.viewCatalog": "Klima Kataloğunu İndir",
     "products.premiumClimate": "Premium İklim Çözümleri",
-    "products.description": "Split klima, inverter klima ve ticari klima sistemleri - Yaşam ve çalışma alanlarınız için gelişmiş iklim kontrol çözümleri",
+    "products.description":
+      "Split klima, inverter klima ve ticari klima sistemleri - Yaşam ve çalışma alanlarınız için gelişmiş iklim kontrol çözümleri",
     "products.premium": "Premium",
     "products.viewDetails": "Detayları Görüntüle",
     "products.exploreRange": "Komple Ürün Yelpazemizi Keşfedin",
-    "products.catalogDescription": "Tüm premium ürünlerimizi, teknik özelliklerini ve özel tekliflerimizi keşfetmek için kapsamlı kataloğumuzu indirin",
+    "products.catalogDescription":
+      "Tüm premium ürünlerimizi, teknik özelliklerini ve özel tekliflerimizi keşfetmek için kapsamlı kataloğumuzu indirin",
     "products.fullCatalog": "Tam Katalog Mevcut",
     "products.premiumQuality": "Premium Kalite",
     "products.certifiedProducts": "Sertifikalı Ürünler",
@@ -145,7 +152,7 @@ const translations = {
     "products.upToYears": "5 Yıla Kadar",
     "products.fastService": "Hızlı Servis",
     "products.quickInstallation": "Hızlı Kurulum",
-    "products.countries": "Ülkeler",
+    "products.countries": "Ülke",
 
     // Contact
     "contact.title": "Klima Fiyat Teklifi ve İletişim",
@@ -170,7 +177,7 @@ const LanguageContext = createContext<LanguageContextType | undefined>(
   undefined
 );
 
-export  function LanguageProvider({ children }: { children: React.ReactNode }) {
+export function LanguageProvider({ children }: { children: React.ReactNode }) {
   const [language, setLanguage] = useState<Language>("tr"); // Default to English
 
   const t = (key: string): string => {

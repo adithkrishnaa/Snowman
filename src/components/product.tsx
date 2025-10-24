@@ -633,7 +633,7 @@ export default function Product() {
                 </div>
               </div>
               <div className="bg-white/90 backdrop-blur-sm p-3 rounded-2xl text-center shadow-lg hover:shadow-xl transition-all duration-300">
-                <div className="text-3xl font-bold text-secondary mb-2">1+</div>
+                <div className="text-3xl font-bold text-secondary mb-2">10+</div>
                 <div className="text-sm text-muted-foreground uppercase tracking-wide">
                   {t("Years")}
                 </div>

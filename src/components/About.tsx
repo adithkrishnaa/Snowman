@@ -24,7 +24,7 @@ export default function About() {
           <AnimatedSection className="text-center mb-20" delay={0.2}>
             <motion.h2
               id="about-heading"
-              className="text-5xl md:text-6xl font-display font-bold text-foreground mb-8"
+              className="text-4xl md:text-6xl font-display font-bold text-foreground mb-8"
               initial={{ scale: 0.8, opacity: 0 }}
               whileInView={{ scale: 1, opacity: 1 }}
               transition={{ duration: 0.8, ease: "backOut" }}
@@ -132,7 +132,7 @@ export default function About() {
                 </div>
                 <div className="bg-white/90 backdrop-blur-sm p-6 rounded-2xl text-center shadow-lg hover:shadow-xl transition-all duration-300">
                   <div className="text-4xl font-bold text-secondary mb-2">
-                    1+
+                    10+
                   </div>
                   <div className="text-sm text-muted-foreground uppercase tracking-wide">
                     {t("Years")}
@@ -151,7 +151,7 @@ export default function About() {
                     50+
                   </div>
                   <div className="text-sm text-muted-foreground uppercase tracking-wide">
-                    Countries
+                    {t("Countrie")}
                   </div>
                 </div>
               </div>
