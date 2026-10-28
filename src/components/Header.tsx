@@ -49,6 +49,7 @@ export const Header = () => {
   const navItems = [
     { label: t("nav.about"), id: "about" },
     { label: t("nav.products"), id: "products" },
+    { label: t("nav.dealers"), id: "dealers" },
     { label: t("nav.contact"), id: "contact" },
   ];
 

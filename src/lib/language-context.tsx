@@ -15,7 +15,14 @@ const translations = {
     // Navigation
     "nav.about": "About Us",
     "nav.products": "Products",
+    "nav.dealers": "Dealers",
     "nav.contact": "Contact",
+
+    // Dealers
+    "dealers.title": "Dealers & Service Points",
+    "dealers.subtitle":
+      "Find your nearest authorized Snowman dealer and service point",
+    "dealers.openMap": "Open in Google Maps",
 
     // Hero
     "hero.title": "Snowman Split & Inverter Air Conditioning Systems",
@@ -96,7 +103,14 @@ const translations = {
     // Navigation
     "nav.about": "Hakkımızda",
     "nav.products": "Klima Ürünleri",
+    "nav.dealers": "Bayiler",
     "nav.contact": "İletişim",
+
+    // Dealers
+    "dealers.title": "Bayiler ve Servis Noktaları",
+    "dealers.subtitle":
+      "Size en yakın yetkili Snowman bayisini ve servis noktasını bulun",
+    "dealers.openMap": "Google Haritalar'da Aç",
 
     // Hero
     "hero.title": "Snowman Split Klima ve İnverter Klima Sistemleri",

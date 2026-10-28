@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import About from "@/components/About";
 import Product from "@/components/product";
+import { DealerMap } from "@/components/DealerMap";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { WhatsAppButton } from "@/components/WhatsAppButton";
@@ -28,6 +29,7 @@ export default function Home() {
             <Hero />
             <About />
             <Product />
+            <DealerMap />
             <Contact />
           </main>
           <Footer />
