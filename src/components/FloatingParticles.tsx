@@ -1,53 +1,86 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
+
+interface Particle {
+  left: string;
+  top: string;
+  x: number;
+  duration: number;
+  delay: number;
+}
+
+const makeParticles = (
+  count: number,
+  xRange: number,
+  baseDuration: number,
+  durationRange: number,
+  delayRange: number
+): Particle[] =>
+  Array.from({ length: count }).map(() => ({
+    left: `${Math.random() * 100}%`,
+    top: `${Math.random() * 100}%`,
+    x: Math.random() * xRange - xRange / 2,
+    duration: baseDuration + Math.random() * durationRange,
+    delay: Math.random() * delayRange,
+  }));
 
 export const FloatingParticles = () => {
+  // Random positions are generated after mount so server and client HTML match
+  const [small, setSmall] = useState<Particle[]>([]);
+  const [large, setLarge] = useState<Particle[]>([]);
+
+  useEffect(() => {
+    setSmall(makeParticles(20, 20, 3, 2, 2));
+    setLarge(makeParticles(5, 30, 5, 3, 3));
+  }, []);
+
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
       {/* Floating particles */}
-      {Array.from({ length: 20 }).map((_, i) => (
+      {small.map((p, i) => (
         <motion.div
           key={i}
           className="absolute w-2 h-2 bg-primary/20 rounded-full"
           style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
+            left: p.left,
+            top: p.top,
           }}
           animate={{
             y: [0, -30, 0],
-            x: [0, Math.random() * 20 - 10, 0],
+            x: [0, p.x, 0],
             opacity: [0.2, 0.8, 0.2],
             scale: [1, 1.2, 1],
           }}
           transition={{
-            duration: 3 + Math.random() * 2,
+            duration: p.duration,
             repeat: Infinity,
-            delay: Math.random() * 2,
+            delay: p.delay,
             ease: "easeInOut",
           }}
         />
       ))}
-      
+
       {/* Larger floating elements */}
-      {Array.from({ length: 5 }).map((_, i) => (
+      {large.map((p, i) => (
         <motion.div
           key={`large-${i}`}
           className="absolute w-4 h-4 bg-secondary/10 rounded-full"
           style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
+            left: p.left,
+            top: p.top,
           }}
           animate={{
             y: [0, -50, 0],
-            x: [0, Math.random() * 30 - 15, 0],
+            x: [0, p.x, 0],
             opacity: [0.1, 0.5, 0.1],
             scale: [1, 1.5, 1],
           }}
           transition={{
-            duration: 5 + Math.random() * 3,
+            duration: p.duration,
             repeat: Infinity,
-            delay: Math.random() * 3,
+            delay: p.delay,
             ease: "easeInOut",
           }}
         />

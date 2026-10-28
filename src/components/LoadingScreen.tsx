@@ -18,6 +18,22 @@ export const LoadingScreen = ({
   const { isLoading } = useLoading();
   const [progress, setProgress] = useState(0);
   const [loadingText, setLoadingText] = useState("Initializing...");
+  // Random positions are generated after mount so server and client HTML match
+  const [floaters, setFloaters] = useState<
+    { left: string; top: string; x: number; duration: number; delay: number }[]
+  >([]);
+
+  useEffect(() => {
+    setFloaters(
+      Array.from({ length: 8 }).map(() => ({
+        left: `${20 + Math.random() * 60}%`,
+        top: `${20 + Math.random() * 60}%`,
+        x: Math.random() * 10 - 5,
+        duration: 2 + Math.random() * 2,
+        delay: Math.random() * 2,
+      }))
+    );
+  }, []);
 
   useEffect(() => {
     if (!isLoading) return;
@@ -244,23 +260,23 @@ export const LoadingScreen = ({
 
             {/* Floating Elements */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-              {Array.from({ length: 8 }).map((_, i) => (
+              {floaters.map((p, i) => (
                 <motion.div
                   key={i}
                   className="absolute w-1 h-1 bg-primary/30 rounded-full"
                   style={{
-                    left: `${20 + Math.random() * 60}%`,
-                    top: `${20 + Math.random() * 60}%`,
+                    left: p.left,
+                    top: p.top,
                   }}
                   animate={{
                     y: [0, -20, 0],
-                    x: [0, Math.random() * 10 - 5, 0],
+                    x: [0, p.x, 0],
                     opacity: [0.3, 0.8, 0.3],
                   }}
                   transition={{
-                    duration: 2 + Math.random() * 2,
+                    duration: p.duration,
                     repeat: Infinity,
-                    delay: Math.random() * 2,
+                    delay: p.delay,
                     ease: "easeInOut",
                   }}
                 />
