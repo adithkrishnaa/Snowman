@@ -1,7 +1,13 @@
 import type { NextConfig } from "next";
 
+// `npm run build:static` produces a plain HTML export in `out/` for uploading to
+// SiteGround (public_html). The regular `npm run build` is used by Vercel.
+const isStaticExport = process.env.npm_lifecycle_event === 'build:static';
+
 const nextConfig: NextConfig = {
+  ...(isStaticExport && { output: 'export' }),
   images: {
+    unoptimized: isStaticExport,
     remotePatterns: [
       {
         protocol: 'https',
@@ -17,7 +23,11 @@ const nextConfig: NextConfig = {
   compress: true,
   poweredByHeader: false,
   generateEtags: true,
-  async headers() {
+};
+
+// Headers are not supported in a static export
+if (!isStaticExport) {
+  nextConfig.headers = async () => {
     return [
       {
         source: '/:path*',
@@ -41,7 +51,7 @@ const nextConfig: NextConfig = {
         ],
       },
     ];
-  },
-};
+  };
+}
 
 export default nextConfig;
