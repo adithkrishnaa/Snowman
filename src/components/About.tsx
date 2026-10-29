@@ -48,6 +48,27 @@ export default function About() {
             </motion.p>
           </AnimatedSection>
 
+          {/* Mobile-only Video */}
+          <motion.div
+            className="md:hidden mb-8 relative rounded-3xl overflow-hidden shadow-2xl border border-primary/20"
+            initial={{ opacity: 0, scale: 0.95 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            viewport={{ once: true }}
+          >
+            <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-primary/20 via-secondary/10 to-accent/20 blur-2xl -z-10" />
+            <video
+              src="https://res.cloudinary.com/dhydt6pu1/video/upload/v1774766056/xmhp461spuroddhgthds.mp4"
+              autoPlay
+              muted
+              loop
+              playsInline
+              controls
+              className="w-full rounded-3xl object-cover"
+              aria-label="Snowman product showcase video"
+            />
+          </motion.div>
+
           {/* Main Content Grid */}
           <div className="hidden md:grid lg:grid-cols-2 gap-16 items-center mb-20 ">
             {/* Left Side - Features */}
@@ -119,50 +140,58 @@ export default function About() {
               </motion.div>
             </StaggeredChildren>
 
-            {/* Right Side - Stats */}
-            <div className="space-y-8">
-              <div className="grid grid-cols-2 gap-6">
-                <div className="bg-white/90 backdrop-blur-sm p-6 rounded-2xl text-center shadow-lg hover:shadow-xl transition-all duration-300">
-                  <div className="text-4xl font-bold text-primary mb-2">
-                    500+
-                  </div>
-                  <div className="text-sm text-muted-foreground uppercase tracking-wide">
-                    {t("Product")}
-                  </div>
+            {/* Right Side - Video + Stats */}
+            <div className="space-y-6">
+              {/* Video Player */}
+              <motion.div
+                className="relative rounded-3xl overflow-hidden shadow-2xl border border-primary/20 bg-black/5 backdrop-blur-sm"
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.01 }}
+              >
+                {/* Glow ring */}
+                <div className="absolute inset-0 rounded-3xl bg-gradient-to-tr from-primary/20 via-secondary/10 to-accent/20 blur-2xl -z-10" />
+                <video
+                  src="https://res.cloudinary.com/dhydt6pu1/video/upload/v1774766056/xmhp461spuroddhgthds.mp4"
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  controls
+                  className="w-full rounded-3xl object-cover h-96"
+                  aria-label="Snowman product showcase video"
+                />
+              </motion.div>
+
+              {/* Stats grid */}
+              <div className="grid grid-cols-4 gap-3">
+                <div className="bg-white/90 backdrop-blur-sm p-4 rounded-2xl text-center shadow-lg hover:shadow-xl transition-all duration-300">
+                  <div className="text-3xl font-bold text-primary mb-1">500+</div>
+                  <div className="text-xs text-muted-foreground uppercase tracking-wide">{t("Product")}</div>
                 </div>
-                <div className="bg-white/90 backdrop-blur-sm p-6 rounded-2xl text-center shadow-lg hover:shadow-xl transition-all duration-300">
-                  <div className="text-4xl font-bold text-secondary mb-2">
-                    10+
-                  </div>
-                  <div className="text-sm text-muted-foreground uppercase tracking-wide">
-                    {t("Years")}
-                  </div>
+                <div className="bg-white/90 backdrop-blur-sm p-4 rounded-2xl text-center shadow-lg hover:shadow-xl transition-all duration-300">
+                  <div className="text-3xl font-bold text-secondary mb-1">10+</div>
+                  <div className="text-xs text-muted-foreground uppercase tracking-wide">{t("Years")}</div>
                 </div>
-                <div className="bg-white/90 backdrop-blur-sm p-6 rounded-2xl text-center shadow-lg hover:shadow-xl transition-all duration-300">
-                  <div className="text-4xl font-bold text-primary-light mb-2">
-                    24/7
-                  </div>
-                  <div className="text-sm text-muted-foreground uppercase tracking-wide">
-                    {t("Support")}
-                  </div>
+                <div className="bg-white/90 backdrop-blur-sm p-4 rounded-2xl text-center shadow-lg hover:shadow-xl transition-all duration-300">
+                  <div className="text-3xl font-bold text-primary-light mb-1">24/7</div>
+                  <div className="text-xs text-muted-foreground uppercase tracking-wide">{t("Support")}</div>
                 </div>
-                <div className="bg-white/90 backdrop-blur-sm p-6 rounded-2xl text-center shadow-lg hover:shadow-xl transition-all duration-300">
-                  <div className="text-4xl font-bold text-primary mb-2">
-                    50+
-                  </div>
-                  <div className="text-sm text-muted-foreground uppercase tracking-wide">
-                    {t("Countrie")}
-                  </div>
+                <div className="bg-white/90 backdrop-blur-sm p-4 rounded-2xl text-center shadow-lg hover:shadow-xl transition-all duration-300">
+                  <div className="text-3xl font-bold text-primary mb-1">50+</div>
+                  <div className="text-xs text-muted-foreground uppercase tracking-wide">{t("Countrie")}</div>
                 </div>
               </div>
 
               {/* Mission Statement */}
-              <div className="bg-gradient-to-br from-primary/10 to-secondary/10 p-8 rounded-3xl border border-primary/20">
-                <h4 className="text-2xl font-semibold text-foreground mb-4 flex items-center">
-                  <Globe className="h-6 w-6 text-primary mr-3" />
+              <div className="bg-gradient-to-br from-primary/10 to-secondary/10 p-6 rounded-3xl border border-primary/20">
+                <h4 className="text-xl font-semibold text-foreground mb-3 flex items-center">
+                  <Globe className="h-5 w-5 text-primary mr-3" />
                   {t("ourversion")}
                 </h4>
-                <p className="text-muted-foreground leading-relaxed">
+                <p className="text-muted-foreground leading-relaxed text-sm">
                   {t("ourmis.text")}
                 </p>
               </div>
@@ -198,7 +227,7 @@ export default function About() {
                 <Users className="h-8 w-8 text-primary-light" />
               </div>
               <h4 className="text-xl font-semibold text-foreground">
-              { t ("Partnership")}
+                {t("Partnership")}
               </h4>
               <p className="text-muted-foreground">
                 {t("part.text")}
